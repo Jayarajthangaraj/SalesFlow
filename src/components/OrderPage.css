@@ -1,0 +1,441 @@
+.order-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem 1rem;
+}
+
+.order-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.order-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.order-header h1 {
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, #646cff, #535bf2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.order-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0 0 2rem;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.progress-step.active .step-number {
+  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(100, 108, 255, 0.3);
+}
+
+.step-title {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active .step-title {
+  color: #646cff;
+}
+
+.progress-line {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+/* Form Styles */
+.order-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 2rem;
+}
+
+.step-content h3 {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.875rem 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fafbfc;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #646cff;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+/* Checkbox Styles */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.checkbox-label:hover {
+  background: rgba(100, 108, 255, 0.05);
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #646cff;
+}
+
+/* Navigation Buttons */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.nav-btn {
+  background: rgba(100, 108, 255, 0.1);
+  color: #646cff;
+  border: 2px solid rgba(100, 108, 255, 0.2);
+  padding: 0.875rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-btn:hover {
+  background: rgba(100, 108, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(100, 108, 255, 0.2);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(100, 108, 255, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.step-info {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  flex: 1;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .order-page {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+  
+  .order-form {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .order-header h1,
+  .step-content h3,
+  .form-group label {
+    color: #e5e7eb;
+  }
+  
+  .order-header p,
+  .step-info {
+    color: #9ca3af;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: #374151;
+    border-color: #4b5563;
+    color: #e5e7eb;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    background: #4b5563;
+  }
+  
+  .checkbox-label {
+    color: #e5e7eb;
+  }
+  
+  .checkbox-label:hover {
+    background: rgba(100, 108, 255, 0.1);
+  }
+  
+  .form-navigation {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .progress-line {
+    background: #374151;
+  }
+  
+  .step-number {
+    background: #374151;
+    color: #9ca3af;
+  }
+  
+  .step-title {
+    color: #6b7280;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-page {
+    padding: 1rem 0.5rem;
+  }
+  
+  .order-header h1 {
+    font-size: 2rem;
+  }
+  
+  .order-form {
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .progress-steps {
+    gap: 0.5rem;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 0.7rem;
+  }
+  
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .checkbox-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-btn,
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-container {
+    padding: 0 0.5rem;
+  }
+  
+  .order-form {
+    padding: 1.5rem 1rem;
+  }
+  
+  .order-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .step-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  .progress-steps {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .progress-step {
+    flex: none;
+    min-width: 60px;
+  }
+} 
